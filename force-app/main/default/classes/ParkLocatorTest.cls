@@ -4,9 +4,9 @@ private class ParkLocatorTest {
         // This causes a fake response to be generated
         Test.setMock(WebServiceMock.class, new ParkServiceMock());
         // Call the method that invokes a callout
-        String country = 'Japan';
+        String country = 'Germany';
         List<String> result = ParkLocator.country(country);
         // Verify that a fake result is returned
-        System.assertEquals(3.0, result);
+        System.assertEquals(new List<String>{'Hamburg Wadden Sea National Park', 'Hainich National Park', 'Bavarian Forest National Park'}, result);
     }
 }

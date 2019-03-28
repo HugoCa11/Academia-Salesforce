@@ -11,9 +11,10 @@ global class ParkServiceMock implements WebServiceMock {
            String responseName,
            String responseType) {
         // start - specify the response you want to send
-        ParkServices.byCountryResponse response_x = 
-            new ParkServices.byCountryResponse();
-        response_x.return_x = 3.0;
+        ParkService.byCountryResponse response_x = 
+            new ParkService.byCountryResponse();
+        response_x.return_x = new List<String>{'Hamburg Wadden Sea National Park', 
+            'Hainich National Park', 'Bavarian Forest National Park'};
         // end
         response.put('response_x', response_x); 
    }
