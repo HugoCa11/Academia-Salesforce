@@ -68,7 +68,7 @@ private class TriggerHandler_Test {
     System.assertEquals('afterUndelete', lastMethodCalled, 'last method should be afterUndelete');
   }
 
-  @isTest
+  @isTest 
   static void testNonTriggerContext() {
     try{
       handler.run();
@@ -120,7 +120,7 @@ private class TriggerHandler_Test {
   @isTest
   static void testLoopCount() {
     beforeInsertMode();
-
+    
     // set the max loops to 2
     handler.setMaxLoopCount(2);
 
@@ -138,7 +138,7 @@ private class TriggerHandler_Test {
     } catch(TriggerHandler.TriggerHandlerException te) {
       // we're expecting to get here
       System.assertEquals(null, lastMethodCalled, 'last method should be null');
-    } catch(Exception e) {
+    } catch(Exception e) {  
       System.assert(false, 'the exception thrown was not expected: ' + e.getTypeName() + ': ' + e.getMessage());
     }
 
@@ -154,7 +154,7 @@ private class TriggerHandler_Test {
       System.assertEquals('beforeInsert', lastMethodCalled, 'last method should be beforeInsert');
     } catch(TriggerHandler.TriggerHandlerException te) {
       System.assert(false, 'running the handler after clearing the loop count should not throw');
-    } catch(Exception e) {
+    } catch(Exception e) {  
       System.assert(false, 'the exception thrown was not expected: ' + e.getTypeName() + ': ' + e.getMessage());
     }
   }
@@ -183,13 +183,13 @@ private class TriggerHandler_Test {
 
   // private method tests
 
-  @isTest
+  @isTest 
   static void testGetHandlerName() {
     System.assertEquals('TestHandler', handler.getHandlerName(), 'handler name should match class name');
   }
 
   // test virtual methods
-
+  
   @isTest
   static void testVirtualMethods() {
     TriggerHandler h = new TriggerHandler();
@@ -273,5 +273,5 @@ private class TriggerHandler_Test {
     }
 
   }
-
+	
 }

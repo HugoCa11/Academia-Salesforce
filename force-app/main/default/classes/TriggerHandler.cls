@@ -17,7 +17,7 @@ public virtual class TriggerHandler {
     loopCountMap = new Map<String, LoopCount>();
     bypassedHandlers = new Set<String>();
   }
-
+  
   // constructor
   public TriggerHandler() {
     this.setTriggerContext();
@@ -103,7 +103,7 @@ public virtual class TriggerHandler {
     } else {
       this.isTriggerExecuting = true;
     }
-
+    
     if((Trigger.isExecuting && Trigger.isBefore && Trigger.isInsert) ||
         (ctx != null && ctx == 'before insert')) {
       this.context = TriggerContext.BEFORE_INSERT;
